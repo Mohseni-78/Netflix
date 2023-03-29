@@ -12,7 +12,7 @@ import toast from 'react-hot-toast'
 interface props {
   user: userT
 }
-const Account = ({ user }: props) => {
+const AccountCom = ({ user }: props) => {
   const router = useRouter()
   const logout = async () => {
     await fetch('/api/logout').then(res => res.json()).then(data => {
@@ -85,4 +85,4 @@ const Account = ({ user }: props) => {
 
 }
 
-export default Account
+export default AccountCom

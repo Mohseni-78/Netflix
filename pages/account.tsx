@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next'
 import React from 'react'
 // Imported Components =============>
-import Account from '@/components/Account'
+import AccountCom from '@/components/AccountCom'
 // Imported Types =============>
 import { userT } from '@/typing'
 // Imported Utils ============>
@@ -10,15 +10,15 @@ import { verifyToken } from '@/utils/functions'
 interface props {
   user: userT
 }
-const account = ({ user }: props) => {
+const Account = ({ user }: props) => {
   return (
     <>
-      <Account user={user} />
+      <AccountCom user={user} />
     </>
   )
 }
 
-export default account
+export default Account
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   const { token } = req.cookies

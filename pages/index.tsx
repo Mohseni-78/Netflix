@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 // Import Components =============>
-import ModalCom from '@/components/Modal'
+import ModalCom from '@/components/ModalCom'
 import Header from '@/components/Header'
 import Banner from '@/components/Banner'
 import Footer from '@/components/Footer'
