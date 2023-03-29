@@ -1,4 +1,3 @@
-//Imported Yup ============>
 import * as Yup from "yup";
 
 const signUpSchema = Yup.object().shape({

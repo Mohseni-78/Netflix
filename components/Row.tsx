@@ -3,6 +3,8 @@ import { useRef, useState } from 'react'
 import { Movie } from '@/typing'
 // Imported Components ==========>
 import Thumbnail from './Thumbnail'
+// Imported Icons ==========>
+import { FiArrowRight, FiArrowLeft } from 'react-icons/fi'
 
 
 interface props {
@@ -34,15 +36,15 @@ const Row = ({ title, movies }: props) => {
                   md:text-xl md:ml-3 ml-1 ${title === "My List" && "text-red-500"}`}>
                     {title}
                 </h2>
-                <svg onClick={() => handleClick('left')}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24" fill="currentColor"
-                    className={`absolute top-0 bottom-0 left-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100 ${!isMoved && 'hidden'}`}>
-                    <path fillRule="evenodd" d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z" clipRule="evenodd" />
-                </svg>
+                <FiArrowLeft
+                    onClick={() => handleClick('left')}
+                    className={`absolute top-0 bottom-0 left-2 z-40 m-auto h-9 
+                    w-9 cursor-pointer opacity-0 transition hover:scale-125 
+                    group-hover:opacity-100 ${!isMoved && 'hidden'}`} />
 
                 <div
-                    className="flex items-center space-x-4 overflow-x-scroll overflow-y-hidden scrollbar-hide md:space-x-2.5 md:p-2 "
+                    className="flex items-center space-x-4 overflow-x-scroll 
+                    overflow-y-hidden scrollbar-hide md:space-x-2.5 md:p-2 "
                     ref={rowRef}
                 >
                     {
@@ -51,12 +53,10 @@ const Row = ({ title, movies }: props) => {
                         ))
                     }
                 </div>
-                <svg onClick={() => handleClick('right')}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24" fill="currentColor"
-                    className="absolute top-0 bottom-0 right-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100">
-                    <path fillRule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" clipRule="evenodd" />
-                </svg>
+                <FiArrowRight
+                    onClick={() => handleClick('right')}
+                    className="absolute top-0 bottom-0 right-2 z-40 m-auto h-9 w-9 
+                    cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100" />
             </div>
         </div>
     )

@@ -46,7 +46,8 @@ const SignUp = () => {
         }
     })
     return (
-        <div className='overflow-x-hidden overflow-y-scroll relative flex h-screen w-screen flex-col bg-black md:items-center md:justify-center md:bg-transparent'>
+        <div className='overflow-x-hidden overflow-y-scroll relative flex h-screen w-screen
+         flex-col bg-black md:items-center md:justify-center md:bg-transparent'>
             <Head>
                 <title>Netflix - SignUp</title>
             </Head>
@@ -69,27 +70,37 @@ const SignUp = () => {
                 <h3 className='text-4xl font-semibold'>SignUp</h3>
                 <div className='space-y-4 w-72'>
                     <label className='inline-block w-full' htmlFor="name">
-                        <input name='name' value={values.name} onChange={handleChange} onBlur={handleBlur} className={`input ${errors.name && touched.name && "border border-red-600"}`} type="text" placeholder='Please enter a name...' id='name' />
+                        <input name='name' value={values.name} onChange={handleChange} onBlur={handleBlur}
+                            className={`input ${errors.name && touched.name && "border border-red-600"}`}
+                            type="text" placeholder='Please enter a name...' id='name' />
                         <p className="text-red-500 font-semibold text-xs mt-1">{errors.name && touched.name && errors.name}</p>
                     </label>
                     <label className='inline-block w-full' htmlFor="family">
-                        <input name='family' value={values.family} onChange={handleChange} onBlur={handleBlur} className={`input ${errors.family && touched.family && "border border-red-600"}`} type="text" placeholder='Please enter a family...' id='family' />
+                        <input name='family' value={values.family} onChange={handleChange} onBlur={handleBlur}
+                            className={`input ${errors.family && touched.family && "border border-red-600"}`}
+                            type="text" placeholder='Please enter a family...' id='family' />
                         <p className='text-red-500 font-semibold text-xs mt-1'>
                             {errors.family && touched.family && errors.family}
                         </p>
                     </label>
                     <label className='inline-block w-full' htmlFor="email">
-                        <input name='email' value={values.email} onChange={handleChange} onBlur={handleBlur} className={`input ${errors.email && touched.email && "border border-red-600"}`} type="text" placeholder='Please enter a email...' id='email' />
+                        <input name='email' value={values.email} onChange={handleChange} onBlur={handleBlur}
+                            className={`input ${errors.email && touched.email && "border border-red-600"}`}
+                            type="text" placeholder='Please enter a email...' id='email' />
                         <p className='text-red-500 font-semibold text-xs mt-1'> {errors.email && touched.email && errors.email}</p>
                     </label>
                     <label className='inline-block w-full' htmlFor="password">
-                        <input name='password' value={values.password} onChange={handleChange} onBlur={handleBlur} className={`input ${errors.password && touched.password && "border border-red-600"}`} type="text" placeholder='Please enter a Password...' id="password" />
+                        <input name='password' value={values.password} onChange={handleChange} onBlur={handleBlur}
+                            className={`input ${errors.password && touched.password && "border border-red-600"}`}
+                            type="text" placeholder='Please enter a Password...' id="password" />
                         <p className='text-red-500 font-semibold text-xs mt-1'>
                             {errors.password && touched.password && errors.password}
                         </p>
                     </label>
                     <label className='inline-block w-full' htmlFor="confirmPassword">
-                        <input name='confirmPassword' value={values.confirmPassword} onChange={handleChange} onBlur={handleBlur} className={`input ${errors.confirmPassword && touched.confirmPassword && "border border-red-600"}`} type="text" placeholder='Please enter a confirmPassword...' id="confirmPassword" />
+                        <input name='confirmPassword' value={values.confirmPassword} onChange={handleChange} onBlur={handleBlur}
+                            className={`input ${errors.confirmPassword && touched.confirmPassword && "border border-red-600"}`}
+                            type="text" placeholder='Please enter a confirmPassword...' id="confirmPassword" />
                         <p className='text-red-500 font-semibold text-xs mt-1'>
                             {errors.confirmPassword && touched.confirmPassword && errors.confirmPassword}
                         </p>
@@ -100,7 +111,8 @@ const SignUp = () => {
                 </div>
                 <button type='submit'
                     disabled={isSubmitting || !!errors.email || !!errors.password || !!errors.confirmPassword}
-                    className={`${isSubmitting || !!errors.email || !!errors.password || !!errors.confirmPassword ? "opacity-75" : ""} w-full rounded bg-[#E50914] py-3 font-semibold`}>Register</button>
+                    className={`${isSubmitting || !!errors.email || !!errors.password || !!errors.confirmPassword ? "opacity-75" : ""} w-full rounded
+                     bg-[#E50914] py-3 font-semibold`}>Register</button>
             </form>
         </div>
     )

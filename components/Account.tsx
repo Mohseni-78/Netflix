@@ -5,7 +5,7 @@ import Link from 'next/link'
 import React from 'react'
 //Imported  Types ============>
 import { userT } from '@/typing'
-//Imported react-hot-toast ============>
+//Imported reactHotToast ============>
 import toast from 'react-hot-toast'
 
 
@@ -57,7 +57,8 @@ const Account = ({ user }: props) => {
           </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 gap-x-4 border px-4 py-4 md:grid-cols-4 md:border-x-0 md:border-t md:border-b-0 md:px-0 md:pb-0">
+        <div className="mt-6 grid grid-cols-1 gap-x-4 border px-4 py-4 md:grid-cols-4
+         md:border-x-0 md:border-t md:border-b-0 md:px-0 md:pb-0">
           <h4 className="text-lg text-[gray]">Plan Details</h4>
           <div className="col-span-2 font-medium">
           </div>
@@ -68,7 +69,8 @@ const Account = ({ user }: props) => {
           </p>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 gap-x-4 border px-4 py-4 md:grid-cols-4 md:border-x-0 md:border-t md:border-b-0 md:px-0">
+        <div className="mt-6 grid grid-cols-1 gap-x-4 border px-4 py-4 md:grid-cols-4
+         md:border-x-0 md:border-t md:border-b-0 md:px-0">
           <h4 className="text-lg text-[gray]">Settings</h4>
           <p
             className="col-span-3 cursor-pointer text-blue-500 hover:underline"

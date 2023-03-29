@@ -9,8 +9,9 @@ interface props {
     movieProps: Movie
 }
 const Thumbnail = ({ movieProps }: props) => {
-    const { openModal, setOpenModal } = useModal();
-    const { movie, setMovie } = useMovie();
+    const { setOpenModal } = useModal();
+    const { setMovie } = useMovie();
+
     return (
         <div
             onClick={() => {

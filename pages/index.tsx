@@ -6,15 +6,13 @@ import Header from '@/components/Header'
 import Banner from '@/components/Banner'
 import Footer from '@/components/Footer'
 import Row from '@/components/Row'
-// Imported Utils ============>
-import requests from '@/utils/request'
 // Imported Types ============>
 import { Movie, userT } from '@/typing'
 // Imported Utils ============>
 import { verifyToken } from '@/utils/functions'
+import requests from '@/utils/request'
+// Imported Contexts ============>
 import { useList } from '@/contexts/ListContextProvider'
-
-
 
 interface props {
   netflixOriginals: Movie[],
@@ -37,7 +35,7 @@ const Home = ({
   romanceMovies,
   documentaries, user }: props) => {
   const { list } = useList()
-  
+
 
 
   return (
@@ -53,7 +51,7 @@ const Home = ({
           <Row title="topRated" movies={topRated} />
           <Row title="actionMovies" movies={actionMovies} />
           {
-            list.length > 0 && (<Row title="My List" movies={list}/>)
+            list.length > 0 && (<Row title="My List" movies={list} />)
           }
           <Row title="comedyMovies" movies={comedyMovies} />
           <Row title="horrorMovies" movies={horrorMovies} />

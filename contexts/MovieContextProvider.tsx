@@ -28,11 +28,8 @@ export function useMovie() {
 }
 const MovieContextProvider = ({ children }: props) => {
     const [movie, setMovie] = useState<Movie | null>(null)
-    const value = {
-        movie: movie, setMovie: setMovie
-    }
     return (
-        <MovieContext.Provider value={value}>{children}</MovieContext.Provider>
+        <MovieContext.Provider value={{ movie: movie, setMovie: setMovie }}>{children}</MovieContext.Provider>
     )
 }
 

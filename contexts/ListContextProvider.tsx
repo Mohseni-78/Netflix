@@ -12,13 +12,15 @@ import { Movie } from "@/typing";
 interface props {
   children: ReactNode;
 }
+
+
 type ListContextT = {
   list: Movie[] | [];
-  setList: Dispatch<SetStateAction<Movie | null>>;
+  setList: Dispatch<SetStateAction<Movie[] | []>>;
 };
 const ListDefaultValue = {
   list: [],
-  setList: () => {},
+  setList: () => { },
 };
 
 const listContext = createContext<ListContextT>(ListDefaultValue);

@@ -10,9 +10,7 @@ import React, {
 interface props {
     children: ReactNode
 }
-// type likeT = {
-//     movieId: number,
-// }
+
 type likeStateT = {
     like: number[] | []
     setLike: Dispatch<SetStateAction<any>>

@@ -53,7 +53,8 @@ const Login = () => {
         }
     });
     return (
-        <div className=' overflow-hidden relative flex h-screen w-screen flex-col bg-black md:items-center md:justify-center md:bg-transparent'>
+        <div className=' overflow-hidden relative flex h-screen w-screen flex-col
+         bg-black md:items-center md:justify-center md:bg-transparent'>
             <Head>
                 <title>Netflix - Login</title>
             </Head>
@@ -72,15 +73,20 @@ const Login = () => {
             />
             <form
                 onSubmit={handleSubmit}
-                className='absolute mt-24 space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14 z-30'>
+                className='absolute mt-24 space-y-8 rounded bg-black/75 
+                py-10 px-6 md:mt-0 md:max-w-md md:px-14 z-30'>
                 <h3 className='text-4xl font-semibold'>Signin</h3>
                 <div className='space-y-4'>
                     <label className='inline-block w-full' htmlFor="email">
-                        <input name='email' value={values.email} onBlur={handleBlur} onChange={handleChange} className={`input ${errors.email && touched.email && "border border-red-600"}`} type="text" placeholder='Please enter a email...' id='email' />
+                        <input name='email' value={values.email} onBlur={handleBlur} onChange={handleChange}
+                            className={`input ${errors.email && touched.email && "border border-red-600"}`}
+                            type="text" placeholder='Please enter a email...' id='email' />
                         <p className="text-red-500 font-semibold text-xs mt-1">{errors.email && touched.email && errors.email}</p>
                     </label>
                     <label className='inline-block w-full' htmlFor="password">
-                        <input name='password' value={values.password} onBlur={handleBlur} onChange={handleChange} className={`input ${errors.password && touched.password && "border border-red-600"}`} type="text" placeholder='Please enter a Password...' id="password" />
+                        <input name='password' value={values.password} onBlur={handleBlur} onChange={handleChange}
+                            className={`input ${errors.password && touched.password && "border border-red-600"}`}
+                            type="text" placeholder='Please enter a Password...' id="password" />
                         <p className="text-red-500 font-semibold text-xs mt-1">{errors.password && touched.password && errors.password}</p>
                     </label>
                 </div>
@@ -90,7 +96,8 @@ const Login = () => {
                 </div>
                 <button type='submit'
                     disabled={isSubmitting || !!errors.email || !!errors.password}
-                    className={`${isSubmitting || !!errors.email || !!errors.password ? "opacity-75" : ""} w-full rounded bg-[#E50914] py-3 font-semibold`}>Login</button>
+                    className={`${isSubmitting || !!errors.email || !!errors.password ? "opacity-75" : ""} w-full rounded bg-[#E50914] 
+                    py-3 font-semibold`}>Login</button>
             </form>
         </div>
     )

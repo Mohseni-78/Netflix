@@ -14,6 +14,12 @@
   body {
     @apply bg-[#141414] text-white;
   }
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#c11137] rounded hover:bg-red-500;
+  }
   header {
     @apply fixed flex items-center justify-between w-full  p-4 lg:px-10 lg:py-6 transition-all top-0 z-50;
   }
