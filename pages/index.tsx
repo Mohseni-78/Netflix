@@ -1,12 +1,20 @@
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 // Import Components =============>
+import ModalCom from '@/components/Modal'
 import Header from '@/components/Header'
 import Banner from '@/components/Banner'
+import Footer from '@/components/Footer'
 import Row from '@/components/Row'
 // Imported Utils ============>
 import requests from '@/utils/request'
 // Imported Types ============>
-import { Movie } from '@/typing'
+import { Movie, userT } from '@/typing'
+// Imported Utils ============>
+import { verifyToken } from '@/utils/functions'
+import { useList } from '@/contexts/ListContextProvider'
+
+
 
 interface props {
   netflixOriginals: Movie[],
@@ -17,6 +25,7 @@ interface props {
   horrorMovies: Movie[],
   romanceMovies: Movie[],
   documentaries: Movie[],
+  user: userT
 }
 const Home = ({
   netflixOriginals,
@@ -26,34 +35,43 @@ const Home = ({
   comedyMovies,
   horrorMovies,
   romanceMovies,
-  documentaries, }: props) => {
+  documentaries, user }: props) => {
+  const { list } = useList()
+  
+
 
   return (
     <div className="relative h-screen bg-gradient-to-b lg:h-[140vh]">
       <Head>
         <title>Netflix - Home</title>
       </Head>
-      <Header />
+      <Header user={user} />
       <main>
         <Banner netflixOriginals={netflixOriginals} />
         <section>
           <Row title="trendingNow" movies={trendingNow} />
           <Row title="topRated" movies={topRated} />
           <Row title="actionMovies" movies={actionMovies} />
+          {
+            list.length > 0 && (<Row title="My List" movies={list}/>)
+          }
           <Row title="comedyMovies" movies={comedyMovies} />
           <Row title="horrorMovies" movies={horrorMovies} />
           <Row title="romanceMovies" movies={romanceMovies} />
           <Row title="documentaries" movies={documentaries} />
         </section>
       </main>
-      {/* Modal */}
+      <hr className='my-5 border-2' />
+      <Footer />
+      <ModalCom />
     </div>
   )
 }
 export default Home
 
-export const getServerSideProps = async () => {
-
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+  const { token } = req.cookies
+  const verifiedToken = await verifyToken(token || '')
   const [
     netflixOriginals,
     trendingNow,
@@ -83,6 +101,7 @@ export const getServerSideProps = async () => {
       horrorMovies: horrorMovies.results,
       romanceMovies: romanceMovies.results,
       documentaries: documentaries.results,
+      user: verifiedToken
     }
   }
 }
