@@ -16,7 +16,7 @@ export default async function handler(
   if (req.method !== "GET") {
     return res.status(401).json({ status: "Failed", message: "Bad Request" });
   }
-  const setCookie = serialize("token", "", {
+  const setCookie = serialize("token", " ", {
     maxAge: 0,
     path: "/",
   });

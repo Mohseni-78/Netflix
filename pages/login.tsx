@@ -33,7 +33,6 @@ const Login = () => {
                 body: JSON.stringify(values)
             }).then(res => res.json()).then(data => {
                 if (data.status === "Success") {
-                    console.log(isSubmitting);
                     router.push('/');
                     toast('Welcome Back to Site!',
                         {

@@ -14,6 +14,7 @@ interface props {
 }
 const AccountCom = ({ user }: props) => {
   const router = useRouter()
+
   const logout = async () => {
     await fetch('/api/logout').then(res => res.json()).then(data => {
       if (data.status === "Success") {
