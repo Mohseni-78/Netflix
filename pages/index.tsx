@@ -91,15 +91,15 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   ])
   return {
     props: {
-      netflixOriginals: netflixOriginals.results,
-      trendingNow: trendingNow.results,
-      topRated: topRated.results,
-      actionMovies: actionMovies.results,
-      comedyMovies: comedyMovies.results,
-      horrorMovies: horrorMovies.results,
-      romanceMovies: romanceMovies.results,
-      documentaries: documentaries.results,
-      user: verifiedToken
+      netflixOriginals: netflixOriginals.results || null,
+      trendingNow: trendingNow.results || null,
+      topRated: topRated.results || null,
+      actionMovies: actionMovies.results || null,
+      comedyMovies: comedyMovies.results || null,
+      horrorMovies: horrorMovies.results || null,
+      romanceMovies: romanceMovies.results || null,
+      documentaries: documentaries.results || null,
+      user: verifiedToken || null
     }
   }
 }

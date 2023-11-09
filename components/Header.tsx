@@ -52,7 +52,7 @@ function Header({ user }: props) {
       <div className='flex items-center space-x-4 text-sm font-light'>
         <BsSearch className='hidden sm:inline w-6 h-6 cursor-pointer' />
         <MdNotifications className='w-6 h-6 cursor-pointer' />
-        <p className='inline text-xl'>{user.name ??
+        <p className='inline text-xl'>{user?.name ??
           (<Link href={'/login'}>
             <button className='bannerBtn bg-[#c11115] text-white '>
               signin
@@ -60,7 +60,7 @@ function Header({ user }: props) {
           </Link>)}
         </p>
         {
-          user.email && (<Link href="/account">
+          user?.email && (<Link href="/account">
             <img
               src="https://rb.gy/g1pwyx"
               alt=""

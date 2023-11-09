@@ -48,7 +48,7 @@ const Row = ({ title, movies }: props) => {
                     ref={rowRef}
                 >
                     {
-                        movies.map(movie => (
+                        movies?.map(movie => (
                             <Thumbnail key={movie.id} movieProps={movie} />
                         ))
                     }
